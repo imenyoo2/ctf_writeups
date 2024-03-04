@@ -171,9 +171,8 @@ def decrypt_aes(cipher_text, key):
 
     return decrypted_text.decode('utf-8')
 
-# Example usage
-cipher_text = b'u5FUKxDUxH9y8yxvfaaU+GSXDwvJS6QxlN/3udOEzpU6fIVUExjDLsB3LKqUTz/x'  # Example cipher text
-key = b'12345678910111213141516171819202'  # Example key
+cipher_text = b'u5FUKxDUxH9y8yxvfaaU+GSXDwvJS6QxlN/3udOEzpU6fIVUExjDLsB3LKqUTz/x'
+key = b'12345678910111213141516171819202'
 
 decrypted_text = decrypt_aes(cipher_text, key)
 print("Decrypted Text:", decrypted_text)
