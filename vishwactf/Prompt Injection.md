@@ -3,7 +3,7 @@
 
 we're given a simple site, it contains 3 links, when clicking on them it take us to a page where we can read the poem
 
-// insert image here
+![](../media/screenshot3.png)
 
 # solution
 
