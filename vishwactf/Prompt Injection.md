@@ -11,11 +11,11 @@ examining the http request, each link send request to the `/show` endpoint with 
 
 ![url](../media/Prompt_Injection_url.png)
 
-the value of `id` is a filename, so let's try if the server has a lfi vulnerbility
+the value of `id` is a filename, so let's try if the server has a lfi vulnerability
 
 ![screenshot](../media/lfi.png)
 
-the server is indeed vurlnable, and after multiples tries, i was able to leak the source code of the server, if was allocated in `../app.py`, but `../app.py` allone won't work because there is a filter, and to skip it you just need to add `./` at the front
+the server is indeed vulnerable, and after multiples tries, i was able to leak the source code of the server, if was allocated in `../app.py`, but `../app.py` allone won't work because there is a filter, and to skip it you just need to add `./` at the front
 
 ![app filter](../media/app_filter.png)
 
@@ -126,7 +126,7 @@ def index():
 run(host='localhost', port=8080)
 ```
 
-after running this and send the mulishous cookie to the `/sign` end point then leaking `/tmp/test` file, we finaly obtain a result
+after running this and send the malicious cookie to the `/sign` end point then leaking `/tmp/test` file, we finaly obtain a result
 
 ![](../media/screenshot.png)
 
