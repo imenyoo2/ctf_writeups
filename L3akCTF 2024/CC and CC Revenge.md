@@ -7,6 +7,7 @@ First, let's examine the encrypt function's input:
 - `0xdeadbeef00000000`: some value
 - a long string, assuming this is the cipher text
 - `0x2b`
+
 To simplify our approach, we'll focus on dynamic analysis and debugging instead of delving into all the inputs.
 
 The encryption process is handled by the `feistel_cipher` function. Here's its input:
