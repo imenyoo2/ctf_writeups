@@ -3,7 +3,7 @@
 ![](../media/Screen%20Shot%202024-06-12%20at%208.42.56%20PM.png)
 
 ## analyzing the binary
-decompiling the binary we can figure out what it does, it just read input from user and then print an ascii art
+first let's decompile the binary so we can figure out what it does, it reads input from user and then print an ascii art
 
 ![](../media/Screen%20Shot%202024-06-10%20at%2010.49.03%20PM.png)
 
@@ -16,7 +16,7 @@ there is also a `win` function that when called print the output of `flag.txt` f
 ### user input
 the user input is provided in the form of chunks of 8 bytes, the last iteration is when `i > 105` and that will be when `i == 112`, so we can overflow the buffer but we only have 4 bytes after the buffer to override.
 
-when we examine the assembly code we find that `i` is at the position `RBP - 0x4` and read buffer is at `RBP - 0x70` meaning that `i` is lower in the stack so we can override it.
+when we examine the assembly code we find that `i` is at the position `RBP - 0x4` and `buffer` is at `RBP - 0x70` meaning that `i` is lower in the stack so we can override it.
 
 now that we control the loop counter, we can override the return value by calculating the offset between `buffer` and the return value and override `i` accordingly.
 
@@ -32,7 +32,7 @@ offset = 112
 ```
 
 ### overriding the return address
-now we just need to send the payload to overflow `buffer` and override `i` with offset, and then send the new return address
+now we just need to send the payload to overflow `buffer` and override `i` with `offset`, and then send the new return address
 
 ```py
 from pwn import *
