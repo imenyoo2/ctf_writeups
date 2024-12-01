@@ -2,7 +2,7 @@
 ![](../media/Pasted%20image%2020241201034405.png)
 
 ![](../media/Pasted%20image%2020241201050133.png)
-# discription
+# description
 
 we're given a ELF binary that checks the flag by passing it as an argument
 ```
